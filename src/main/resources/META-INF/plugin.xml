@@ -1,12 +1,18 @@
 <!-- Plugin Configuration File. Read more: https://plugins.jetbrains.com/docs/intellij/plugin-configuration-file.html -->
 <idea-plugin>
     <id>com.github.antoniohbmonteiro.pixtemplates</id>
-    <name>IntelliJ Platform Plugin Pix-Templates</name>
+    <name>Pix-Templates</name>
     <vendor>antoniohbmonteiro</vendor>
 
     <depends>com.intellij.modules.platform</depends>
+    <depends>org.jetbrains.android</depends>
+    <depends>org.jetbrains.kotlin</depends>
+    <depends>com.intellij.modules.java</depends>
 
     <extensions defaultExtensionNs="com.intellij">
+        <defaultLiveTemplates file="/liveTemplates/Pix.xml"/>
+        <liveTemplateContext implementation="com.github.antoniohbmonteiro.pixtemplates.liveTemplates.PixContext"/>
+        
         <applicationService serviceImplementation="com.github.antoniohbmonteiro.pixtemplates.services.MyApplicationService"/>
         <projectService serviceImplementation="com.github.antoniohbmonteiro.pixtemplates.services.MyProjectService"/>
     </extensions>
@@ -15,4 +21,8 @@
         <listener class="com.github.antoniohbmonteiro.pixtemplates.listeners.MyProjectManagerListener"
                   topic="com.intellij.openapi.project.ProjectManagerListener"/>
     </applicationListeners>
+
+    <extensions defaultExtensionNs="com.android.tools.idea.wizard.template">
+        <wizardTemplateProvider implementation="com.github.antoniohbmonteiro.pixtemplates.other.setup.WizardTemplateProviderImpl"/>
+    </extensions>
 </idea-plugin>

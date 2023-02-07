@@ -1,0 +1,48 @@
+<templateSet group="Pix">
+    <template name="liveData"
+              value="private val _$NAME$ = androidx.lifecycle.MutableLiveData&lt;$CLASS$&gt;()&#10;val $NAME$ = _$NAME$.asImmutable()"
+              description="Create a live data" toReformat="false" toShortenFQNames="true">
+        <variable name="NAME" expression="" defaultValue="" alwaysStopAt="true"/>
+        <variable name="CLASS" expression="" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="KOTLIN_CLASS" value="true"/>
+            <option name="KOTLIN_STATEMENT" value="true"/>
+            <option name="KOTLIN_TOPLEVEL" value="true"/>
+            <option name="Pix-Template" value="true"/>
+        </context>
+    </template>
+    <template name="centerParent"
+              value="app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;app:layout_constraintStart_toStartOf=&quot;parent&quot;&#10;app:layout_constraintTop_toTopOf=&quot;parent&quot;"
+              description="Center all constraint to parent" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="XML_ATTRIBUTE" value="true"/>
+            <option name="Pix-Template" value="true"/>
+        </context>
+    </template>
+    <template name="centerHorizontalParent"
+              value="app:layout_constraintBottom_toBottomOf=&quot;parent&quot;&#10;app:layout_constraintTop_toTopOf=&quot;parent&quot;"
+              description="Center vertical constraints to parent" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="XML_ATTRIBUTE" value="true"/>
+            <option name="Pix-Template" value="true"/>
+        </context>
+    </template>
+    <template name="centerVerticalParent"
+              value="app:layout_constraintEnd_toEndOf=&quot;parent&quot;&#10;app:layout_constraintStart_toStartOf=&quot;parent&quot;&#10;"
+              description="Center horizontal constraints to parent" toReformat="false" toShortenFQNames="true">
+        <context>
+            <option name="XML_ATTRIBUTE" value="true"/>
+            <option name="Pix-Template" value="true"/>
+        </context>
+    </template>
+    <template name="centerStartTop"
+              value="app:layout_constraintStart_toEndOf=&quot;$start$&quot;&#10;app:layout_constraintTop_toBottomOf=&quot;$top$&quot;"
+              description="Center start and top constraints" toReformat="false" toShortenFQNames="true">
+        <variable name="start" expression="" defaultValue="" alwaysStopAt="true"/>
+        <variable name="top" expression="" defaultValue="" alwaysStopAt="true"/>
+        <context>
+            <option name="XML_ATTRIBUTE" value="true"/>
+            <option name="Pix-Template" value="true"/>
+        </context>
+    </template>
+</templateSet>
